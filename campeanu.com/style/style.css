@@ -1,0 +1,575 @@
+/*
+ * --------------------------- CORE -------------------------- --->
+ * ----------------------------------------------------------- ---> 
+ */
+
+/* --------- BODY --------- */
+body 
+{
+    margin:  0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; 
+
+    overflow: hidden;
+
+}
+/*
+ * <--- ------------------------ CORE -----------------------------
+ * <--- ----------------------------------------------------------- 
+ */
+
+/*
+ * --------------------------- INDEX PAGE -------------------------- --->
+ * ----------------------------------------------------------------- ---> 
+ */
+
+/* --------- FIRST ANIMATION LAYERS  --------- */
+.openingAnimation
+{
+    position: fixed;
+    
+    top:    0;
+    left:   0;
+    right:  0;
+    bottom: 0;
+
+    pointer-events: none;
+
+    z-index: 10000;
+}
+
+.openingAnimation .layer 
+{
+    position: absolute;
+    
+    top:  0;
+    left: 0;
+
+    width:  100%;
+    height: 100%;
+
+    transform-origin: top;
+    animation: openingAnimation 1s ease-in-out forwards;
+}
+
+.openingAnimation .layer:nth-child(1)
+{   
+    background: #798498;
+    z-index: 2;
+}
+
+.openingAnimation .layer:nth-child(2)
+{
+    background: #E8F8FD;
+
+    animation-delay: 1s;
+
+    z-index: 1;    
+}
+
+@keyframes openingAnimation 
+{
+    0%
+    {
+        transform: scaleY(1);
+    }
+ 
+    100%
+    {
+        transform: scaleY(0);
+    }
+}
+
+/* --------- section  --------- */
+section 
+{
+    position: absolute;
+    
+    width: 100%;
+    height: 100%;
+
+    background: #ffffff;
+
+    display: grid;
+    justify-content: center;
+
+    align-items: center;
+}
+
+/* --------- TEXT AND TEXT ANIMATIONS --------- */
+.indexPageText 
+{
+
+    position: absolute;
+    top:  50%;
+    left: 10%;
+
+    transform: translateY(-50%);
+    max-width: 700px;
+
+}
+
+.indexPageText h2, 
+.indexPageText h3 
+{
+    position: relative;
+
+    color: #505664;
+
+    margin:  0;
+    padding: 0;
+
+    display: inline-block;
+
+    transform-origin: left;
+    text-transform: uppercase;
+
+    transform: scaleX(0);
+
+    animation: revealTextReverse 1s ease-in-out forwards;
+
+}
+
+.indexPageText h2
+{
+    font-size: 4em;
+    animation-delay: 2s;
+} 
+
+.indexPageText h3
+{
+    font-size: 2em;
+    animation-delay: 3s;
+} 
+
+.indexPageText h2:before, 
+.indexPageText h3:before
+{
+    content: '';
+    
+    position: absolute;
+    
+    top:  0;
+    left: 0;
+
+    background: #000000;
+
+    width:  100%;
+    height: 100%;
+
+    transform-origin: right;
+    animation: revealText 1s ease-in-out forwards;
+}
+
+.indexPageText h2:before
+{
+    animation-delay: 3s;
+}
+
+.indexPageText h3:before
+{
+    animation-delay: 4s;
+}
+
+@keyframes revealText 
+{
+    0%
+    {
+        transform: scaleX(1);
+    }
+    
+    100%
+    {
+        transform: scaleX(0);
+    }
+}
+
+
+@keyframes revealTextReverse
+{
+    0%
+    {
+        transform: scaleX(0);
+    }
+ 
+    100%
+    {
+        transform: scaleX(1);
+    }
+}
+
+.indexPageText p 
+{
+    opacity: 0;
+    
+    color: #8c8c8c;
+    font-size: 1.2em;
+    font-weight: bold;
+
+
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 5s;
+}
+
+/*
+    INDEX PARGRAPH FADE IN ANIMATION HERE 
+*/
+@keyframes fadeIn
+{
+    0%
+    {
+        opacity: 0;
+    }
+ 
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+.indexPageText a 
+{
+    opacity: 0;
+    
+    display: inline-block;
+    
+    margin: 20px 0 0;
+    padding: 10px 20px;
+    
+    border-radius: 5px;
+
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 2px 3px rgba(0,0,0,0.15);
+    background: #9ED2A7;
+    color: #ffffff;
+    
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.2em;
+    letter-spacing: 1;
+
+    animation: fadeInBottom 0.5s linear forwards;
+
+    animation-delay: 5.5s;
+
+}
+
+.indexPageText a:hover
+{
+    transition: all 0.4s ease-out;
+    background: #505664;
+    color: #ffffff;
+}
+
+@keyframes fadeInBottom
+{
+    0%
+    {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    
+    100%
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* --------- INDEX PAGE ILUSTRATION --------- */
+
+.ilustration
+{
+    opacity: 0;
+    
+    position: absolute;
+    right: 10%;
+    top:   50%;
+
+    transform: translateY(-50%);
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 6s;
+}
+
+.socialmedia ul 
+{
+    position: absolute;
+    bottom: 40px;
+    right:  25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.socialmedia ul li:nth-child(1)
+{
+    animation-delay: 5s;
+}
+
+.socialmedia ul li:nth-child(2)
+{
+    animation-delay: 5.25s;
+}
+
+.socialmedia ul li:nth-child(3)
+{
+    animation-delay: 5.50s;
+}
+
+.socialmedia ul li:nth-child(4)
+{
+    animation-delay: 5.75s;
+}
+
+.socialmedia ul li 
+{
+    opacity: 0;
+    margin: 10px 0;
+    text-align: center;
+    list-style: none;
+    animation: fadeInBottom 0.5s linear forwards;
+    animation-delay: 5s;
+}
+
+.socialmedia ul li a 
+{
+    font-size: 1.6em;
+    color: #505664;
+}
+.socialmedia ul li a:hover 
+{
+    transition: all 0.2s ease-out;
+    color: #798498;
+}
+/* ------------- HEADER SECTION --------------- */
+
+header 
+{
+    position: absolute;
+    top:  0;
+    left: 0;
+
+    width:  100%;
+    height: 80px;
+
+    padding: 0 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    box-sizing: border-box;
+
+    z-index: 100;
+}
+
+header h2 
+{
+    position: relative;
+
+    margin:  0;
+    padding: 0;
+
+    display: inline-block;
+
+    transform-origin: left;
+    text-transform: uppercase;
+
+    color: #537D6F;
+    text-shadow: 2px 2px #000000;
+    font-size: 2em;
+    transform: scaleX(0);
+    
+    animation: HeaderrevealTextReverse 1s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+header h2 .space 
+{
+    margin-left: 3px;
+}
+
+header h2 span 
+{
+    position: relative;
+    display: inline-block;
+}
+
+header h2 span:nth-child(1)
+{
+    color: #C6EBFC;
+}
+header h2 span:nth-child(2)
+{
+    color: #9ED2A7;
+}
+header h2 span:nth-child(4)
+{
+    color: #B4E1F3;
+    transform: translateY(5px) rotate(40deg);
+}
+
+header h2 span:nth-child(5)
+{
+    color: #9ED2A7;
+    transform: translateY(5px) rotate(5deg);
+}
+
+header h2 span:nth-child(6)
+{
+    color: #F5C924;
+    transform: translateY(5px) rotate(-20deg);
+}
+
+header h2 span:nth-child(7)
+{
+    color: #87BAFB;
+    transform: translateY(5px) rotate(-10deg);
+}
+
+header h2:before
+{
+    content: '';
+    
+    position: absolute;
+    
+    top:  0;
+    left: 0;
+
+    background: #000000;
+
+    width:  101%;
+    height: 110%;
+
+    transform-origin: right;
+    animation: HeaderrevealText 1s ease-in-out forwards;
+    z-index: 10;
+}
+
+header h2:before
+{
+    animation-delay: 3s;
+}
+
+
+@keyframes HeaderrevealText 
+{
+    0%
+    {
+        transform: scaleX(1);
+    }
+    
+    100%
+    {
+        transform: scaleX(0);
+    }
+}
+
+
+@keyframes HeaderrevealTextReverse
+{
+    0%
+    {
+        transform: scaleX(0);
+    }
+ 
+    100%
+    {
+        transform: scaleX(1);
+    }
+}
+
+header ul
+{
+    margin:  0;
+    padding: 0;
+
+    display: flex;
+}
+
+header ul li 
+{
+    opacity: 0;
+    list-style: none;
+    margin: 0 10px;
+    animation: fadeInRight 0.5s linear forwards;
+}
+
+header ul li:nth-child(1)
+{
+    animation-delay: 5s;
+}
+
+header ul li:nth-child(2)
+{
+    animation-delay: 5.25s;
+}
+
+header ul li:nth-child(3)
+{
+    animation-delay: 5.50s;
+}
+
+header ul li:nth-child(4)
+{
+    animation-delay: 5.75s;
+}
+
+header ul li:last-child
+{
+    margin-right: 0;
+}
+
+header ul li a 
+{
+    opacity: 1;
+    
+    display: inline-block;
+    
+    margin: 20px 0 0;
+    padding: 10px 20px;
+
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 2px 3px rgba(0,0,0,0.15);
+    
+    font-weight: 700;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+
+    text-decoration: none;
+    background: #9ED2A7;
+    color: #ffffff;   
+}
+
+
+header ul li a.active, header ul li a:hover
+{
+    transition: all 0.4s ease-out;
+    background: #505664;
+    color: #ffffff;
+}
+
+@keyframes fadeInRight
+{
+    0%
+    {
+        transform: translate(150px);
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+/* ------------- HEADER SECTION --------------- */
+
+/*
+ * <--- ------------------------ INDEX PAGE -------------------------- --->
+ * <--- -------------------------------------------------------------- ---> 
+ */
+
+
+
+
+
